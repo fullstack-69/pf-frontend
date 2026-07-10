@@ -6,7 +6,7 @@ function App() {
 
   async function fetchData() {
     // This will not work without CORS enabled.
-    // const res = await axios.get<TodoItem[]>("http://localhost:3000/todo");
+    // const res = await axios.get<TodoItem[]>("http://localhost:3001/todo");
 
     // Using proxy server to avoid dealing with CORS.
     const res = await axios.get<TodoItem[]>("api/todo");
@@ -22,7 +22,9 @@ function App() {
       <header>
         <h1>Todo App</h1>
       </header>
-      <main>{JSON.stringify(todos)}</main>
+      <main>
+        <pre>{JSON.stringify(todos)}</pre>
+      </main>
     </div>
   );
 }
